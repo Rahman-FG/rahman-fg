@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Fotografer | Wisuda, Akad & Resepsi</title>
+    
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Swiper.js (untuk galeri swipe) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
+    <!-- Memuat Font (Misalnya, Lora & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Mengatur font kustom */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFDFD; /* Putih yang sangat lembut */
+            color: #333333;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Lora', serif;
+        }
+
+        /* Warna Aksen Emas Kustom */
+        /* Kita akan menggunakan warna-warna Tailwind, tapi ini untuk referensi:
+           gold-500: #D4AF37 (bisa diganti dengan amber/yellow tailwind)
+        */
+
+        /* Kustomisasi Swiper Navigation */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #D4AF37; /* Warna emas */
+            transition: opacity 0.3s;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 8px;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* Kustomisasi Swiper Pagination */
+        .swiper-pagination-bullet {
+            background: #A8A29E; /* stone-400 */
+            opacity: 0.8;
+        }
+        .swiper-pagination-bullet-active {
+            background: #D4AF37; /* Warna emas */
+            opacity: 1;
+        }
+
+        /* Efek blur di navigasi */
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+
+    <!-- Kustomisasi Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emas': '#D4AF37', // Aksen Emas
+                        'emas-gelap': '#B8860B',
+                        'latar': '#FDFDFD',
+                        'teks': '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- ===== Navigasi ===== -->
+    <nav class="sticky top-0 z-50 w-full bg-latar/80 backdrop-blur-custom shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nama -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-serif font-bold text-teks">RAHMAN FG</a>
+                </div>
+                <!-- Menu Links -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#portofolio" class="text-gray-600 hover:text-emas px-3 py-2 rounded-md text-sm font-medium">Portofolio</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-emas px-3 py-2 rounded-md text-sm font-medium">Tentang</a>
+                    <a href="#kontak" class="bg-emas hover:bg-emas-gelap text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300 shadow-md">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero Section ===== -->
+    <header class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+        <!-- Background Image -->
+        <img src="img/hero-background.jpg" 
+     alt="Foto sampul portofolio" 
+     class="w-full h-full object-cover opacity-80">
+            <!-- Overlay gradien lembut -->
+            <div class="absolute inset-0 bg-gradient-to-t from-latar via-latar/30 to-transparent"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 p-4 max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-teks leading-tight mb-6" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.1)">
+                Mengukir Cerita Dalam Cahaya
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-700 mb-10">
+                Spesialis fotografi Wisuda, Akad Nikah, dan Resepsi.
+            </p>
+            <a href="#portofolio" class="bg-emas hover:bg-emas-gelap text-white font-bold py-3 px-10 rounded-full text-lg transition duration-300 shadow-lg">
+                Jelajahi Karya
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== Slogan Singkat / Keunggulan ===== -->
+    <section id="tentang" class="bg-stone-100 py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif font-semibold text-teks mb-2">Penuh Makna</h3>
+                    <p class="text-gray-600">Menangkap tawa, air mata bahagia, dan momen tulus yang tak ternilai.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif font-semibold text-teks mb-2">Abadi</h3>
+                    <p class="text-gray-600">Gaya pemotretan yang elegan dan tak lekang oleh waktu.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-serif font-semibold text-teks mb-2">Profesional</h3>
+                    <p class="text-gray-600">Pelayanan personal dan hasil akhir berkualitas tinggi untuk Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Portofolio Section ===== -->
+    <section id="portofolio" class="py-20 sm:py-24 bg-latar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-serif font-bold text-center text-teks mb-16">
+                Galeri Pilihan
+            </h2>
+
+            <!-- Kategori 1: Wisuda -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-serif font-bold text-teks mb-8 text-center">Wisuda</h3>
+                <div class="swiper-container swiper-wisuda relative rounded-lg overflow-hidden shadow-xl">
+                    <div class="swiper-wrapper">
+                        <!-- GANTI path gambar wisuda di sini -->
+                        <div class="swiper-slide"><img src="img/wisuda-1.jpg" class="w-full h-[500px] object-cover" alt="Foto Wisuda 1"></div>
+                        <div class="swiper-slide"><img src="img/wisuda-2.jpg" class="w-full h-[500px] object-cover" alt="Foto Wisuda 2"></div>
+                        <div class="swiper-slide"><img src="img/wisuda-3.jpg" class="w-full h-[500px] object-cover" alt="Foto Wisuda 3"></div>
+                        <div class="swiper-slide"><img src="img/wisuda-4.jpg" class="w-full h-[500px] object-cover" alt="Foto Wisuda 4"></div>
+                    </div>
+                    <!-- Navigasi -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination swiper-pagination-wisuda mt-4"></div>
+                </div>
+            </div>
+
+            <!-- Kategori 2: Akad Nikah -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-serif font-bold text-teks mb-8 text-center">Akad Nikah</h3>
+                <div class="swiper-container swiper-akad relative rounded-lg overflow-hidden shadow-xl">
+                    <div class="swiper-wrapper">
+                        <!-- GANTI path gambar akad di sini -->
+                        <div class="swiper-slide"><img src="img/akad-1.jpg" class="w-full h-[500px] object-cover" alt="Foto Akad 1"></div>
+                        <div class="swiper-slide"><img src="img/akad-2.jpg" class="w-full h-[500px] object-cover" alt="Foto Akad 2"></div>
+                        <div class="swiper-slide"><img src="img/akad-3.jpg" class="w-full h-[500px] object-cover" alt="Foto Akad 3"></div>
+                        <div class="swiper-slide"><img src="img/akad-4.jpg" class="w-full h-[500px] object-cover" alt="Foto Akad 4"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination swiper-pagination-akad mt-4"></div>
+                </div>
+            </div>
+
+            <!-- Kategori 3: Resepsi -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-serif font-bold text-teks mb-8 text-center">Resepsi</h3>
+                <div class="swiper-container swiper-resepsi relative rounded-lg overflow-hidden shadow-xl">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide"><img src="img/resepsi-1.jpg" class="w-full h-[500px] object-cover" alt="Foto Resepsi 1"></div>
+                        <div class="swiper-slide"><img src="img/resepsi-2.jpg" class="w-full h-[500px] object-cover" alt="Foto Resepsi 2"></div>
+                        <div class="swiper-slide"><img src="img/resepsi-3.jpg" class="w-full h-[500px] object-cover" alt="Foto Resepsi 3"></div>
+                        <div class="swiper-slide"><img src="img/resepsi-4.jpg" class="w-full h-[500px] object-cover" alt="Foto Resepsi 4"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination swiper-pagination-resepsi mt-4"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Kontak / CTA ===== -->
+    <section id="kontak" class="bg-stone-100 py-20 sm:py-24 text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-teks mb-6">
+                Wujudkan Momen Impian Anda
+            </h2>
+            <p class="text-lg text-gray-700 mb-10">
+                Mari diskusikan visi Anda. Hubungi saya untuk konsultasi, cek ketersediaan tanggal, dan penawaran spesial.
+            </p>
+            <a href="https://wa.me/6281775117001?text=Halo, saya tertarik dengan jasa fotografi Anda." 
+               target="_blank" 
+               class="bg-emas hover:bg-emas-gelap text-white font-bold py-3 px-10 rounded-full text-lg transition duration-300 shadow-lg">
+                Hubungi via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-teks text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 RAHMAN FG. Dibuat dengan cinta.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-emas">Instagram</a>
+                <a href="#" class="hover:text-emas">TikTok</a>
+                <a href="#" class="hover:text-emas">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Inisialisasi Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Opsi Swiper umum
+            const swiperOptions = {
+                loop: true,
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 1, // Default untuk mobile
+                spaceBetween: 16,
+                pagination: {
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Efek "Coverflow" untuk tampilan yang lebih dinamis
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 30,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                // Breakpoints untuk desktop
+                breakpoints: {
+                    768: { // Tablet
+                        slidesPerView: 2,
+                        centeredSlides: false,
+                        effect: 'slide', // Kembali ke slide normal di tablet
+                    },
+                    1024: { // Desktop
+                        slidesPerView: 2.5, // Menampilkan 2.5 slide
+                        centeredSlides: true,
+                        effect: 'slide', // Kembali ke slide normal di desktop
+                    }
+                }
+            };
+
+            // Inisialisasi Swiper Wisuda
+            new Swiper('.swiper-wisuda', {
+                ...swiperOptions,
+                pagination: {
+                    ...swiperOptions.pagination,
+                    el: '.swiper-pagination-wisuda',
+                },
+            });
+
+            // Inisialisasi Swiper Akad
+            new Swiper('.swiper-akad', {
+                ...swiperOptions,
+                pagination: {
+                    ...swiperOptions.pagination,
+                    el: '.swiper-pagination-akad',
+                },
+            });
+
+            // Inisialisasi Swiper Resepsi
+            new Swiper('.swiper-resepsi', {
+                ...swiperOptions,
+                pagination: {
+                    ...swiperOptions.pagination,
+                    el: '.swiper-pagination-resepsi',
+                },
+            });
+        });
+    </script>
+
+</body>
+</html>
+
